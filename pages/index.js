@@ -14,7 +14,8 @@ export default function Index({ env, name }) {
   const vars = env
     .sort((a, b) => a.key > b.key)
     .map((e, i) => {
-      return (<li key={i}><strong>{e.key}</strong>: {e.val}</li>);
+      const highlight = e.key.includes('VERCEL') ? 'highlight' : '';
+      return (<li key={i}><strong className={highlight}>{e.key}</strong>: {e.val}</li>);
     });
 
   return (
