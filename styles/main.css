@@ -1,3 +1,7 @@
 body {
   font-family: 'Menlo', 'Bitstream Vera Sans Mono', 'Monaco', 'Consolas', monospace;
 }
+
+.highlight {
+  background-color: #b2ffd3;
+}

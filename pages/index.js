@@ -4,18 +4,24 @@ import Link from 'next/link';
 export async function getStaticProps() {
   const name = process.env.ENVERCEL || 'Unknown';
   const env = Object.keys(process.env).map((e) => {
-    return {key: e, val: process.env[e] }
+    return { key: e, val: process.env[e] }
+  });
+  const sorted = env.sort((a, b) => {
+    const al = a.key.toLowerCase();
+    const bl = b.key.toLowerCase();
+    if (al < bl) return -1;
+    if (al > bl) return 1;
+    return 0;
   });
 
-  return { props: { env, name } };
+  return { props: { env: sorted, name } };
 }
 
 export default function Index({ env, name }) {
-  const vars = env
-    .sort((a, b) => a.key > b.key)
-    .map((e, i) => {
-      return (<li key={i}><strong>{e.key}</strong>: {e.val}</li>);
-    });
+  const vars = env.map((e, i) => {
+    const highlight = e.key.includes('VERCEL') ? 'highlight' : '';
+    return (<li key={i}><strong className={highlight}>{e.key}</strong>: {e.val}</li>);
+  });
 
   return (
     <div>

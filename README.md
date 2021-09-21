@@ -1,6 +1,6 @@
 # envercel
 
-For testing different environments with Next.js & Vercel.
+For testing different environments with [Next.js](https://nextjs.org) & [Vercel](https://vercel.com).
 
 ### Local
 
@@ -19,4 +19,4 @@ Deployments are automated by Vercel.
 environment | branch | uri
 ---|---|---
 production | `main` | https://envercel.vercel.app/
-preview | `preview` | https://envercel-dev.vercel.app/
+preview | `preview` | https://envercel-preview.vercel.app/
