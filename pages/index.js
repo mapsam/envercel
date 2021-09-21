@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Link from 'next/link';
 
 export async function getStaticProps() {
-  const name = process.env.NAME || 'Unknown';
+  const name = process.env.ENVERCEL || 'Unknown';
   const env = Object.keys(process.env).map((e) => {
     return {key: e, val: process.env[e] }
   });
