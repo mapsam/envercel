@@ -26,7 +26,7 @@ export default function Index({ env, name }) {
   return (
     <div>
       <Head>
-        <title>envercel</title>
+        <title>envercel: {name}</title>
         <meta name='description' content='envercel does next.js and vercel environments' />
       </Head>
 
